@@ -19,6 +19,6 @@ export default async function handleRequest(req: Request & { nextUrl?: URL }) {
   const url = req.nextUrl || new URL(req.url);
 
   url.host = PROXY_HOST;
-  return await fetch(url, request)
+  return await fetch(url, req)
 
 }
