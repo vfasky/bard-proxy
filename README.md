@@ -1,4 +1,4 @@
-# Google PaLM / gemini AI API proxy on Vercel Edge
+# Google PaLM / Gemini AI API proxy on Vercel Edge
 
 To deploy on Vercel:
 
@@ -6,4 +6,4 @@ To deploy on Vercel:
 
 ## Credits
 
-It is built on top of [egoist/openai-proxy](https://github.com/egoist/openai-proxy), which started this project
+It is built on top of [egoist/openai-proxy](https://github.com/egoist/openai-proxy) AND [bard-proxy](https://github.com/tsui66/bard-proxy), which started this project

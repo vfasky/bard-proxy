@@ -27,7 +27,7 @@ export default async function handler(req: NextRequest) {
     url.port = "443"
   }
   url.search = '?' + qs.stringify(query)
-  console.log(url.toString())
+  // console.log(url.toString())
   return fetch(
     url,
     {
