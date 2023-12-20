@@ -1,8 +1,7 @@
 {
-  "name": "openai-proxy",
+  "name": "bard-proxy",
   "version": "0.0.0",
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20230307.0",
     "@types/node": "20.2.1",
     "@types/react": "^18.0.31",
     "typescript": "^5.0.2"
