@@ -1,4 +1,5 @@
 import type { NextRequest } from 'next/server'
+import qs from 'qs'
 
 export const config = {
   runtime: "edge", // this is a pre-requisite
@@ -19,9 +20,16 @@ const PROXY_HOST = "generativelanguage.googleapis.com";
 export default async function handler(req: NextRequest) {
   const url = new URL(req.url)
   url.host = PROXY_HOST
+  const query = qs.parse(url.search.replace('?', ''))
+  delete query.path
+  if (url.port !== "443") {
+    url.protocol = "https:"
+    url.port = "443"
+  }
+  url.search = '?' + qs.stringify(query)
   console.log(url.toString())
   return fetch(
-    url.toString(),
+    url,
     {
       method: req.method,
       headers: req.headers,

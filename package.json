@@ -4,6 +4,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230307.0",
     "@types/node": "20.2.1",
+    "@types/qs": "^6.9.10",
     "@types/react": "^18.0.31",
     "typescript": "^5.0.2"
   },
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "next": "^13.2.4",
+    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
