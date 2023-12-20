@@ -1,5 +1,5 @@
-/** @type {import('next').NextConfig} */
-const config = {
+const nextConfig = {
+  reactStrictMode: true,
   async rewrites() {
     return [
       {
@@ -10,10 +10,10 @@ const config = {
             "key": "key",
           }
         ],
-        destination: "/api/proxy"
-      },
-    ];
-  },
-};
+        destination: '/api'
+      }
+    ]
+  }
+}
 
-export default config;
+module.exports = nextConfig

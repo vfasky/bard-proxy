@@ -1,3 +1,5 @@
+import type { NextRequest } from 'next/server'
+
 export const config = {
   runtime: "edge", // this is a pre-requisite
   // https://vercel.com/docs/concepts/edge-network/regions
@@ -11,14 +13,20 @@ export const config = {
   ],
 };
 
-const PROXY_HOST = "https://generativelanguage.googleapis.com";
+const PROXY_HOST = "generativelanguage.googleapis.com";
 
 
-export default async function handleRequest(req: Request & { nextUrl?: URL }) {
-
-  const url = req.nextUrl || new URL(req.url);
-
-  url.host = PROXY_HOST;
-  return await fetch(url, req)
-
+export default async function handler(req: NextRequest) {
+  const url = new URL(req.url)
+  url.host = PROXY_HOST
+  url.pathname = url.pathname.replace(/^\/api/, '')
+  return fetch(
+    url.toString(),
+    {
+      method: req.method,
+      headers: req.headers,
+      body: req.body,
+      signal: req.signal,
+    }
+  )
 }
