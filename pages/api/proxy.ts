@@ -19,7 +19,7 @@ const PROXY_HOST = "generativelanguage.googleapis.com";
 export default async function handler(req: NextRequest) {
   const url = new URL(req.url)
   url.host = PROXY_HOST
-  url.pathname = url.pathname.replace(/^\/api/, '')
+  console.log(url.toString())
   return fetch(
     url.toString(),
     {
