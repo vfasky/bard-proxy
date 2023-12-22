@@ -11,6 +11,11 @@ export const config = {
     "pdx1",
     "sfo1",
     "sin1",
+    'hnd1',
+    'icn1',
+    'kix1',
+    'syd1',
+    'bom1',
   ],
 };
 
